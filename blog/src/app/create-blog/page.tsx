@@ -1,14 +1,19 @@
 import Container from "@/components/container/container";
+import "./createBlog.css";
 
 const CreateBlog = () => {
   return (
     <Container>
-      <div>
-        <label>title</label>
-        <input type="text" />
+      <div className="create-blog">
+        <div className="form-group">
+          <label className="form-label">Title</label>
+          <input type="text" className="form-input" />
+        </div>
 
-        <label>description</label>
-        <textarea></textarea>
+        <div className="form-group">
+          <label className="form-label">Description</label>
+          <textarea className="form-textarea"></textarea>
+        </div>
       </div>
     </Container>
   );

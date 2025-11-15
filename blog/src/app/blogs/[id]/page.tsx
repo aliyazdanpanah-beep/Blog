@@ -1,8 +1,15 @@
 import Container from "@/components/container/container";
 import { IGetArticel } from "../page";
 
-async function Articel() {
-  const result = await fetch("http://localhost:8001/Articels/1");
+interface IArticelProps {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{}>;
+}
+
+async function Articel(props: IArticelProps) {
+  const { id } = await props.params;
+
+  const result = await fetch(`http://localhost:8001/Articels/${id}`);
   const data = (await result.json()) as IGetArticel;
 
   return (

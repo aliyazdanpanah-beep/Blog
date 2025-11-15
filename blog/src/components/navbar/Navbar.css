@@ -1,0 +1,27 @@
+/* Navbar.css - Ultra Minimal */
+.Navwrapper {
+  display: flex;
+  gap: 2.5rem;
+  padding: 2rem;
+  background-color: transparent;
+}
+
+.Navwrapper a {
+  text-decoration: none;
+  color: #666666;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+
+.Navwrapper a:hover {
+  color: #000000;
+}
+
+.Navwrapper a[aria-current="page"] {
+  color: #000000;
+  font-weight: 500;
+}

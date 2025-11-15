@@ -4,7 +4,11 @@ const CreateBlog = () => {
   return (
     <Container>
       <div>
-        <h1>create Blog</h1>
+        <label>title</label>
+        <input type="text" />
+
+        <label>description</label>
+        <textarea></textarea>
       </div>
     </Container>
   );

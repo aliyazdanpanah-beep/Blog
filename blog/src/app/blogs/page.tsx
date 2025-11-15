@@ -18,7 +18,7 @@ async function Blogs() {
     <Container>
       <div className=" Wrapper grid grid-cols-4 gap-4">
         {data.map((item) => (
-          <Link href={`/blogs/${item.id}`}>
+          <Link key={item.id} href={`/blogs/${item.id}`}>
             <Articel {...item} key={item.id} />
           </Link>
         ))}

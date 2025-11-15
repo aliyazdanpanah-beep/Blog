@@ -3,7 +3,7 @@ import './Navbar.css'
 
 const Navbar = () => {
   return (
-    <div className="Navwrapper">
+    <div className="Navwrapper shadow">
       <Link href={"/"}> Home </Link>
       <Link href={"/blogs"}> Blog </Link>
     </div>

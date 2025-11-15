@@ -2,6 +2,7 @@ import Container from "@/components/container/container";
 import "./blogs.css";
 import Articel from "@/components/Articels/Articel";
 import axios from "axios";
+import Link from "next/link";
 
 export interface IGetArticel {
   id?: number;
@@ -17,7 +18,9 @@ async function Blogs() {
     <Container>
       <div className=" Wrapper grid grid-cols-4 gap-4">
         {data.map((item) => (
-          <Articel {...item} key={item.id} />
+          <Link href={`/blogs/${item.id}`}>
+            <Articel {...item} key={item.id} />
+          </Link>
         ))}
       </div>
     </Container>

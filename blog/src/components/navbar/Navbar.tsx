@@ -6,6 +6,7 @@ const Navbar = () => {
     <div className="Navwrapper shadow">
       <Link href={"/"}> Home </Link>
       <Link href={"/blogs"}> Blog </Link>
+      <Link href={"/create-blog"} > Write</Link>
     </div>
   );
 };

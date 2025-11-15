@@ -1,5 +1,5 @@
 const Blogs = () => {
-  return <div>Blog</div>;
+  return <div className="container ">Blog</div>;
 };
 
 export default Blogs;

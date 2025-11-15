@@ -4,9 +4,9 @@ import Articel from "@/components/Articels/Articel";
 import axios from "axios";
 
 export interface IGetArticel {
-  id: number,
-  title: string,
-  description: string,
+  id?: number,
+  title?: string,
+  description?: string,
 }
 
 async function Blogs() {
@@ -18,7 +18,7 @@ async function Blogs() {
       <div className=" Wrapper grid grid-cols-4 gap-4">
        {
         data.map((item) => (
-          <Articel />
+          <Articel {...item} />
         ))
        }
       </div>

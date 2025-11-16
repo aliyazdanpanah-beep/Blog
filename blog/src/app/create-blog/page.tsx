@@ -10,7 +10,7 @@ const CreateBlog = () => {
     fetch("http://localhost:8001/Articels", {
       method: "POST",
       body: JSON.stringify({
-        id: Math.floor(Math.random() * 1000),
+        id: Math.floor(Math.random() * 1000).toString(),
         title: title,
         description: description,
       }),

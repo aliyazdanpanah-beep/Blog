@@ -5,7 +5,7 @@ import axios from "axios";
 import Link from "next/link";
 
 export interface IGetArticel {
-  id?: number;
+  id?: string;
   title?: string;
   description?: string;
 }

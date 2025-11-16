@@ -1,3 +1,7 @@
 .Wrapper {
   margin: 20px 40px;
 }
+
+.container {
+  padding: 50px;
+}

@@ -15,11 +15,17 @@ async function Blogs() {
   const data = (await result.json()) as IGetArticel[];
 
   return (
-    <section className="container">
-      <div className=" Wrapper grid grid-cols-4 gap-4">
+    <section className="container mx-auto px-4 py-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {data.map((item) => (
-          <Link key={item.id} href={`/blogs/${item.id}`}>
-            <Articel {...item} key={item.id} />
+          <Link
+            key={item.id}
+            href={`/blogs/${item.id}`}
+            className="block h-full"
+          >
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+              <Articel {...item} />
+            </div>
           </Link>
         ))}
       </div>

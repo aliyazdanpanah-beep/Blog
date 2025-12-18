@@ -1,6 +1,6 @@
 import Container from "@/components/container/container";
 import { IGetArticel } from "../page";
-import { notFound } from "next/navigation"; // برای Next.js
+import { notFound } from "next/navigation";
 
 interface IArticelProps {
   params: Promise<{ id: string }>;

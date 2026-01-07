@@ -4,6 +4,8 @@ import Articel from "@/components/Articels/Articel";
 import axios from "axios";
 import Link from "next/link";
 
+export const dynamic = 'force-dynamic'; 
+
 export interface IGetArticel {
   id?: string;
   title?: string;

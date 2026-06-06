@@ -1,78 +1,12 @@
-# Python
-
-**pycache**/
-*.py[cod]
-*$py.class
-
-# Virtual Environment
-
+# Virtual Environments
+backend/venv/
+backend/.venv/
 venv/
-env/
-ENV/
 .venv/
 
+# Python
+__pycache__/
+*.pyc
+
 # Environment Variables
-
 .env
-.env.*
-
-# IDEs
-
-.vscode/
-.idea/
-
-# OS Files
-
-.DS_Store
-Thumbs.db
-
-# Logs
-
-*.log
-
-# SQLite
-
-*.sqlite3
-*.db
-
-# Testing
-
-.pytest_cache/
-.coverage
-htmlcov/
-
-# Type Checkers
-
-.mypy_cache/
-.pyre/
-
-# Build & Distribution
-
-build/
-dist/
-*.egg-info/
-
-# Jupyter
-
-.ipynb_checkpoints/
-
-# FastAPI / Uvicorn
-
-*.pid
-
-# Node.js (if frontend exists)
-
-node_modules/
-.next/
-.nuxt/
-dist/
-
-# Uploads (optional)
-
-uploads/
-media/
-
-# Secrets
-
-secrets.json
-credentials.json

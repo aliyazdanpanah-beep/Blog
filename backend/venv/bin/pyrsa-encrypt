@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/media/sadegh/New Volume/GitHub/blog/backend/venv/bin/python3" "$0" "$@"
+'''exec' "/media/sadegh/New Volume/GitHub/blog/Blog/backend/venv/bin/python3" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re

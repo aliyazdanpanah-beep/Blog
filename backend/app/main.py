@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from database import engine
+from router import blog
 import models
 
 
@@ -16,3 +17,5 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+app.include_router(blog.router)

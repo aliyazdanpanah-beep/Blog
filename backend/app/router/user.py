@@ -26,6 +26,7 @@ def get_db():
 class user_verfic(BaseModel):
      password: str
      new_password: str = Field(min_length=6)
+     username: str
 
 
 class CreateArticelBody(BaseModel):
@@ -83,7 +84,7 @@ async def update_articel_by_id(user: user_dependency, db: db_dependency,
      db.commit()
 
 
-@router.put('/password', status_code=status.HTTP_204_NO_CONTENT)
+@router.put('/change/info', status_code=status.HTTP_204_NO_CONTENT)
 async def change_password(user: user_dependency, db: db_dependency, user_verfication: user_verfic):
      if user is None:
           raise HTTPException(status_code=404, detail='Authentication Failed')
@@ -92,6 +93,7 @@ async def change_password(user: user_dependency, db: db_dependency, user_verfica
      if not bcrypt_context.verify(user_verfication.password, user_model.hashed_password):
           raise HTTPException(status_code=401, detail="Error on password change")
      user_model.hashed_password = bcrypt_context.hash(user_verfication.new_password)
+     user_model.username = user_verfication.username
      db.add(user_model)
      db.commit()
 

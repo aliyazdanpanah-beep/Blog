@@ -39,3 +39,36 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# python venv
+backend/fastapienv/
+venv/
+env/
+ENV/
+
+# compile files in pytohn
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# locall files
+.env
+*.local
+config.local.*
+
+# file logs
+*.log
+logs/
+
+# other files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# editor requerment file
+.vscode/
+.idea/
+*.swp
+*.swo

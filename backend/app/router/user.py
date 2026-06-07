@@ -51,7 +51,7 @@ async def get_user(user: user_dependency, db: db_dependency):
 async def read_all_post_user(user: user_dependency, db: db_dependency):
       if user is None:
           raise HTTPException(status_code=401, detail='Aunautherized')
-      return db.query(Articels).filter(Articels.id == user.get('id')).first()
+      return db.query(Articels).filter(Articels.owner_id == user.get('id')).all()
 
 
 
@@ -65,6 +65,24 @@ async def create_articel(user: user_dependency, db: db_dependency, articels_reau
      db.commit()
 
 
+@router.put('/update/articels/{articels_id}', status_code=status.HTTP_200_OK)
+async def update_articel_by_id(user: user_dependency, db: db_dependency, 
+                              articels_request: CreateArticelBody, articels_id: int = Path(gt=0)):
+     
+     if user is None:
+          raise HTTPException(status_code=401, detail='Aunautherized')
+     articels_model = db.query(Articels).filter(Articels.id == articels_id).filter(Articels.owner_id == user.get('id')).first()
+
+     if articels_model is None:
+          raise HTTPException(status_code=404, detail='Articel not found')
+     articels_model.title = articels_request.title
+     articels_model.description = articels_request.description
+     articels_model.img = articels_request.img
+
+     db.add(articels_model)
+     db.commit()
+
+
 @router.put('/password', status_code=status.HTTP_204_NO_CONTENT)
 async def change_password(user: user_dependency, db: db_dependency, user_verfication: user_verfic):
      if user is None:
@@ -75,4 +93,16 @@ async def change_password(user: user_dependency, db: db_dependency, user_verfica
           raise HTTPException(status_code=401, detail="Error on password change")
      user_model.hashed_password = bcrypt_context.hash(user_verfication.new_password)
      db.add(user_model)
+     db.commit()
+
+
+@router.delete('/articel/delete/{articels_id}', status_code=status.HTTP_204_NO_CONTENT)
+async def delete_articel_id(user: user_dependency, db: db_dependency, articels_id: int = Path(gt=0)):
+     if user is None:
+          raise HTTPException(status_code=401, detail='Aunautherized')
+     articels_model = db.query(Articels).filter(Articels.id == articels_id).filter(Articels.owner_id == user.get('id')).first()
+
+     if articels_model is None:
+          raise HTTPException(status_code=404, detail='Articel not found')
+     db.delete(articels_model)
      db.commit()

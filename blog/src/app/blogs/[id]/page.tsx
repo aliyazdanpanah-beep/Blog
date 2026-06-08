@@ -11,7 +11,7 @@ async function Articel(props: IArticelProps) {
   const { id } = await props.params;
 
   try {
-    const result = await fetch(`http://localhost:8001/Articels/${id}`, {
+    const result = await fetch(`http://127.0.0.1:8000/find/blogs/${id}`, {
       next: { revalidate: 60 },
     });
 

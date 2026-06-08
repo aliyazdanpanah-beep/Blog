@@ -23,3 +23,10 @@ db_dependency = Annotated[Session, Depends(get_db)]
 @router.get('/blogs/', status_code=status.HTTP_200_OK)
 async def get_all_blogs(db: db_dependency):
    return db.query(Articels).all()
+
+
+@router.get('/find/blogs/{articels_id}')
+async def find_blog_by_id(db: db_dependency, articels_id: int = Path(gt=0)):
+     articels_model = db.query(Articels).filter(Articels.id == articels_id).first()
+
+     return articels_model

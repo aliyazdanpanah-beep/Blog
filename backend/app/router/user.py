@@ -33,7 +33,7 @@ class CreateArticelBody(BaseModel):
      title: str
      description: str
      img: str
-     
+
 
 
 db_dependency = Annotated[Session, Depends(get_db)]
@@ -56,7 +56,7 @@ async def read_all_post_user(user: user_dependency, db: db_dependency):
 
 
 
-@router.post('/post/articel/', status_code=status.HTTP_201_CREATED)
+@router.post('/create/articel/', status_code=status.HTTP_201_CREATED)
 async def create_articel(user: user_dependency, db: db_dependency, articels_reauest: CreateArticelBody):
      if user is None:
           raise HTTPException(status_code=401, detail='Aunautherized')

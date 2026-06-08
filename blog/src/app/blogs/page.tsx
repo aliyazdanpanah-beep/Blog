@@ -1,5 +1,5 @@
 import Container from "@/components/container/container";
-import "./blogs.css";
+// import "./blogs.css";
 import Articel from "@/components/Articels/Articel";
 import axios from "axios";
 import Link from "next/link";
@@ -13,7 +13,7 @@ export interface IGetArticel {
 }
 
 async function Blogs() {
-  const result = await fetch("http://localhost:8001/Articels");
+  const result = await fetch("http://127.0.0.1:8000/blogs/");
   const data = (await result.json()) as IGetArticel[];
 
   return (

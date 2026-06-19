@@ -42,6 +42,7 @@ next-env.d.ts
 
 # python venv
 backend/fastapienv/
+backend/venv/
 venv/
 env/
 ENV/

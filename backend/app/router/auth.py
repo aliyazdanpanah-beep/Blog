@@ -17,6 +17,7 @@ router = APIRouter(
      tags=['auth']
 )
 
+
 SECRET_KEY = '83573ujh345887ikfg7983465jh435b3453445'
 ALGORITHM = 'HS256'
 
